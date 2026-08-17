@@ -1,0 +1,43 @@
+pragma foreign_keys = on;
+
+drop table if EXISTS ItemPedido;
+DROP TABLE IF EXISTs Pedido;
+drop table if EXISTS Produto;
+
+CREATE TABLE Pedido (
+  id INTEGER PRIMARY key,
+  data DATE not NULL
+);
+
+create table Produto (
+  id INTEGER PRIMARY key,
+  nome TEXT not NULL UNIQUE,
+  precoAtual REAL NOT NULL
+);
+
+CREATE TABLE ItemPedido (
+  idPedido INTEGER,
+  idProduto INTEGER,
+
+  quantidade INTEGER NOT NULL,
+
+  PRIMARY KEY (idPedido, idProduto),
+  
+  FOREIGN key (idPedido) REFERENCES Pedido(id),
+  FOREIGN key (idProduto) REFERENCES Produto(id)
+);
+
+insert into Produto VALUES
+(1, 'Mouse', 80), (2, 'Teclado', 120);
+
+insert INTO Pedido VALUES
+(1, '2026-08-01'), (2, '2026-08-02');
+
+INSERT INTO ItemPedido VALUES
+(1, 1, 2),
+(1, 2, 1),
+(2, 1, 1);
+
+select * from Produto;
+select * from Pedido;
+select * from ItemPedido;

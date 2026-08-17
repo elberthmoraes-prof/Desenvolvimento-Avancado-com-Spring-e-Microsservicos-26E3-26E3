@@ -1,0 +1,745 @@
+package br.edu.infnet.elberth_api;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.elberth_api.domain.Comunicado;
+import br.edu.infnet.elberth_api.domain.Escola;
+import br.edu.infnet.elberth_api.domain.Pessoa;
+import br.edu.infnet.elberth_api.domain.Professor;
+import br.edu.infnet.elberth_api.domain.Responsavel;
+import br.edu.infnet.elberth_api.domain.Turma;
+import br.edu.infnet.elberth_api.exception.IdentificadorDuplicadoException;
+import br.edu.infnet.elberth_api.exception.RecursoNaoEncontradoException;
+import br.edu.infnet.elberth_api.service.ComunicadoService;
+import br.edu.infnet.elberth_api.service.EscolaService;
+import br.edu.infnet.elberth_api.service.ProfessorService;
+import br.edu.infnet.elberth_api.service.ResponsavelService;
+import br.edu.infnet.elberth_api.service.TurmaService;
+
+@Component
+public class ProjetoRunner implements CommandLineRunner {
+
+    private final EscolaService escolaService =
+            new EscolaService();
+
+    private final TurmaService turmaService =
+            new TurmaService();
+
+    private final ComunicadoService comunicadoService;
+
+    private final ProfessorService professorService =
+            new ProfessorService();
+
+    private final ResponsavelService responsavelService =
+            new ResponsavelService();
+
+    private Escola escola;
+    private Turma turma901;
+    private Turma turma801;
+
+    private Comunicado comunicado1;
+    private Comunicado comunicado2;
+    private Comunicado comunicado3;
+
+    private Professor professor;
+    private Responsavel responsavel;
+
+    public ProjetoRunner(ComunicadoService comunicadoService) {
+    	this.comunicadoService = comunicadoService;
+	}
+    
+    @Override
+    public void run(String... args) {
+
+        imprimirTitulo("INÍCIO DA APLICAÇÃO");
+
+        criarObjetos();
+        demonstrarPolimorfismo();
+        criarRelacionamentos();
+        demonstrarRelacionamentos();
+        cadastrarObjetos();
+
+        demonstrarOperacoesBasicas();
+        demonstrarAlteracao();
+        demonstrarExclusao();
+        demonstrarConsultasImperativas();
+        demonstrarConsultasDeclarativas();
+        demonstrarProtecaoDasColecoes();
+        demonstrarExcecoes();
+
+        imprimirTitulo("FIM DA EXECUÇÃO");
+    }
+
+    private void criarObjetos() {
+
+        imprimirTitulo("CRIAÇÃO DOS OBJETOS");
+
+        escola = new Escola(
+                1L,
+                "Pombinho Feliz",
+                "São Gonçalo",
+                true,
+                4.8
+        );
+
+        turma901 = new Turma(
+                1L,
+                "901",
+                2026,
+                true
+        );
+
+        turma801 = new Turma(
+                2L,
+                "801",
+                2026,
+                true
+        );
+
+        comunicado1 = new Comunicado(
+                1L,
+                "Reunião de responsáveis",
+                "A reunião será realizada na sexta-feira.",
+                true,
+                LocalDateTime.of(
+                        2026,
+                        8,
+                        10,
+                        18,
+                        30
+                )
+        );
+
+        comunicado2 = new Comunicado(
+                2L,
+                "Trabalho de Java",
+                "Entrega da primeira etapa na próxima semana.",
+                false,
+                null
+        );
+
+        comunicado3 = new Comunicado(
+                3L,
+                "Passeio escolar",
+                "A saída está prevista para as oito horas.",
+                true,
+                LocalDateTime.of(
+                        2026,
+                        8,
+                        12,
+                        8,
+                        0
+                )
+        );
+
+        professor = new Professor(
+                1L,
+                "Elberth",
+                "elberth@moraes.com",
+                "PROF001",
+                true
+        );
+
+        responsavel = new Responsavel(
+                2L,
+                "Luiz",
+                "luiz@silva.com",
+                "21999888777",
+                true
+        );
+
+        System.out.println(escola);
+        System.out.println(turma901);
+        System.out.println(turma801);
+        System.out.println(comunicado1);
+        System.out.println(comunicado2);
+        System.out.println(comunicado3);
+        System.out.println(professor);
+        System.out.println(responsavel);
+    }
+
+    private void demonstrarPolimorfismo() {
+
+        imprimirTitulo("HERANÇA E POLIMORFISMO");
+
+        List<Pessoa> pessoas = List.of(
+                professor,
+                responsavel
+        );
+
+        pessoas.forEach(System.out::println);
+
+        System.out.println(
+                "Nome do professor: "
+                        + professor.getNome()
+        );
+
+        System.out.println(
+                "Nome do responsável: "
+                        + responsavel.getNome()
+        );
+    }
+
+    private void criarRelacionamentos() {
+
+        imprimirTitulo("CRIAÇÃO DOS RELACIONAMENTOS");
+
+        escola.adicionarTurma(turma901);
+        escola.adicionarTurma(turma801);
+
+        turma901.adicionarComunicado(
+                comunicado1
+        );
+
+        turma901.adicionarComunicado(
+                comunicado2
+        );
+
+        turma801.adicionarComunicado(
+                comunicado3
+        );
+    }
+
+    private void demonstrarRelacionamentos() {
+
+        imprimirTitulo("RELACIONAMENTOS");
+
+        System.out.println(escola);
+        System.out.println(turma901);
+        System.out.println(turma801);
+
+        System.out.println();
+        System.out.println(
+                "Turmas da escola:"
+        );
+
+        escola
+                .getTurmas()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Comunicados da turma 901:"
+        );
+
+        turma901
+                .getComunicados()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Escola da turma 901: "
+                        + turma901
+                                .getEscola()
+                                .getNome()
+        );
+
+        System.out.println(
+                "Turma do comunicado 1: "
+                        + comunicado1
+                                .getTurma()
+                                .getNome()
+        );
+    }
+
+    private void cadastrarObjetos() {
+
+        imprimirTitulo("CADASTRO NOS SERVICES");
+
+        escolaService.incluir(escola);
+
+        turmaService.incluir(turma901);
+        turmaService.incluir(turma801);
+
+        comunicadoService.incluir(
+                comunicado1
+        );
+
+        comunicadoService.incluir(
+                comunicado2
+        );
+
+        comunicadoService.incluir(
+                comunicado3
+        );
+
+        professorService.incluir(
+                professor
+        );
+
+        responsavelService.incluir(
+                responsavel
+        );
+
+        System.out.println(
+                "Objetos cadastrados com sucesso."
+        );
+    }
+
+    private void demonstrarOperacoesBasicas() {
+
+        imprimirTitulo("OPERAÇÕES BÁSICAS");
+
+        System.out.println(
+                "Escola por ID:"
+        );
+
+        System.out.println(
+                escolaService.obterPorId(1L)
+        );
+
+        System.out.println();
+        System.out.println(
+                "Turmas cadastradas:"
+        );
+
+        turmaService
+                .obterLista()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Comunicados cadastrados:"
+        );
+
+        comunicadoService
+                .obterLista()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Professores cadastrados:"
+        );
+
+        professorService
+                .obterLista()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Responsáveis cadastrados:"
+        );
+
+        responsavelService
+                .obterLista()
+                .forEach(System.out::println);
+    }
+
+    private void demonstrarAlteracao() {
+
+        imprimirTitulo("ALTERAÇÃO");
+
+        System.out.println(
+                "Antes da alteração:"
+        );
+
+        System.out.println(
+                comunicadoService.obterPorId(2L)
+        );
+
+        comunicado2.setTitulo(
+                "Trabalho final de Java"
+        );
+
+        comunicado2.setConteudo(
+                "Entrega da segunda etapa na próxima semana."
+        );
+
+        comunicado2.setPublicado(true);
+
+        comunicado2.setDataPublicacao(
+                LocalDateTime.of(
+                        2026,
+                        8,
+                        15,
+                        19,
+                        0
+                )
+        );
+
+        comunicadoService.alterar(
+                comunicado2
+        );
+
+        System.out.println();
+        System.out.println(
+                "Depois da alteração:"
+        );
+
+        System.out.println(
+                comunicadoService.obterPorId(2L)
+        );
+    }
+
+    private void demonstrarExclusao() {
+
+        imprimirTitulo("EXCLUSÃO");
+
+        Comunicado comunicadoTemporario =
+                new Comunicado(
+                        4L,
+                        "Comunicado temporário",
+                        "Este objeto será removido.",
+                        false,
+                        null
+                );
+
+        comunicadoService.incluir(
+                comunicadoTemporario
+        );
+
+        System.out.println(
+                "Quantidade antes da exclusão: "
+                        + comunicadoService
+                                .obterLista()
+                                .size()
+        );
+
+        comunicadoService.excluir(4L);
+
+        System.out.println(
+                "Quantidade depois da exclusão: "
+                        + comunicadoService
+                                .obterLista()
+                                .size()
+        );
+    }
+
+    private void demonstrarConsultasImperativas() {
+
+        imprimirTitulo("CONSULTAS IMPERATIVAS");
+
+        System.out.println(
+                "Comunicados publicados:"
+        );
+
+        comunicadoService
+                .obterPublicados()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Busca pelo termo 'Java':"
+        );
+
+        comunicadoService
+                .buscarPorTitulo("Java")
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Busca sem resultado:"
+        );
+
+        List<Comunicado> resultado =
+                comunicadoService
+                        .buscarPorTitulo(
+                                "Matemática"
+                        );
+
+        System.out.println(
+                "Quantidade encontrada: "
+                        + resultado.size()
+        );
+    }
+
+    private void demonstrarConsultasDeclarativas() {
+
+        imprimirTitulo("CONSULTAS COM STREAMS");
+
+        System.out.println(
+                "Comunicados publicados:"
+        );
+
+        comunicadoService
+                .obterPublicadosDeclarativo()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Busca declarativa pelo termo 'reunião':"
+        );
+
+        comunicadoService
+                .buscarPorTituloDeclarativa(
+                        "reunião"
+                )
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Comunicados ordenados por título:"
+        );
+
+        comunicadoService
+                .ordenarPorTitulo()
+                .forEach(System.out::println);
+
+        System.out.println();
+        System.out.println(
+                "Transformação para List<String>:"
+        );
+
+        List<String> titulos =
+                comunicadoService
+                        .obterTitulos();
+
+        titulos.forEach(
+                System.out::println
+        );
+    }
+
+    private void demonstrarProtecaoDasColecoes() {
+
+        imprimirTitulo("PROTEÇÃO DAS COLEÇÕES");
+
+        testarCopiaRetornadaPeloService();
+        testarListaProtegidaDaEscola();
+        testarListaProtegidaDaTurma();
+    }
+
+    private void testarCopiaRetornadaPeloService() {
+
+        List<Comunicado> copia =
+                comunicadoService.obterLista();
+
+        int quantidadeOriginal =
+                comunicadoService
+                        .obterLista()
+                        .size();
+
+        copia.clear();
+
+        int quantidadeDepois =
+                comunicadoService
+                        .obterLista()
+                        .size();
+
+        System.out.println(
+                "Quantidade original no Service: "
+                        + quantidadeOriginal
+        );
+
+        System.out.println(
+                "Quantidade após limpar a cópia: "
+                        + quantidadeDepois
+        );
+    }
+
+    private void testarListaProtegidaDaEscola() {
+
+        try {
+
+            escola
+                    .getTurmas()
+                    .clear();
+
+        } catch (
+                UnsupportedOperationException e
+        ) {
+
+            System.out.println(
+                    "A lista de turmas está protegida."
+            );
+        }
+    }
+
+    private void testarListaProtegidaDaTurma() {
+
+        try {
+
+            turma901
+                    .getComunicados()
+                    .clear();
+
+        } catch (
+                UnsupportedOperationException e
+        ) {
+
+            System.out.println(
+                    "A lista de comunicados está protegida."
+            );
+        }
+    }
+
+    private void demonstrarExcecoes() {
+
+        imprimirTitulo("TRATAMENTO DE EXCEÇÕES");
+
+        testarIdentificadorDuplicado();
+        testarObjetoInexistente();
+        testarAlteracaoDeObjetoInexistente();
+        testarExclusaoDeObjetoInexistente();
+        testarObjetoNulo();
+        testarObjetoComIdNulo();
+        testarIdentificadorNulo();
+        testarTermoNulo();
+        testarTermoVazio();
+        testarRelacionamentoComTurmaNula();
+        testarRelacionamentoComComunicadoNulo();
+    }
+
+    private void testarIdentificadorDuplicado() {
+
+        executarTeste(
+                "Identificador duplicado",
+                () -> comunicadoService
+                        .incluir(comunicado1)
+        );
+    }
+
+    private void testarObjetoInexistente() {
+
+        executarTeste(
+                "Obtenção de recurso inexistente",
+                () -> comunicadoService
+                        .obterPorId(999L)
+        );
+    }
+
+    private void testarAlteracaoDeObjetoInexistente() {
+
+        Comunicado inexistente =
+                new Comunicado(
+                        999L,
+                        "Objeto inexistente",
+                        "Este objeto não foi cadastrado.",
+                        false,
+                        null
+                );
+
+        executarTeste(
+                "Alteração de recurso inexistente",
+                () -> comunicadoService
+                        .alterar(inexistente)
+        );
+    }
+
+    private void testarExclusaoDeObjetoInexistente() {
+
+        executarTeste(
+                "Exclusão de recurso inexistente",
+                () -> comunicadoService
+                        .excluir(999L)
+        );
+    }
+
+    private void testarObjetoNulo() {
+
+        executarTeste(
+                "Inclusão de objeto nulo",
+                () -> comunicadoService
+                        .incluir(null)
+        );
+    }
+
+    private void testarObjetoComIdNulo() {
+
+        Comunicado semId =
+                new Comunicado(
+                        null,
+                        "Comunicado sem ID",
+                        "Objeto inválido.",
+                        false,
+                        null
+                );
+
+        executarTeste(
+                "Inclusão de objeto com ID nulo",
+                () -> comunicadoService
+                        .incluir(semId)
+        );
+    }
+
+    private void testarIdentificadorNulo() {
+
+        executarTeste(
+                "Busca com identificador nulo",
+                () -> comunicadoService
+                        .obterPorId(null)
+        );
+    }
+
+    private void testarTermoNulo() {
+
+        executarTeste(
+                "Busca com termo nulo",
+                () -> comunicadoService
+                        .buscarPorTitulo(null)
+        );
+    }
+
+    private void testarTermoVazio() {
+
+        executarTeste(
+                "Busca com termo vazio",
+                () -> comunicadoService
+                        .buscarPorTitulo("   ")
+        );
+    }
+
+    private void testarRelacionamentoComTurmaNula() {
+
+        executarTeste(
+                "Inclusão de turma nula",
+                () -> escola
+                        .adicionarTurma(null)
+        );
+    }
+
+    private void testarRelacionamentoComComunicadoNulo() {
+
+        executarTeste(
+                "Inclusão de comunicado nulo",
+                () -> turma901
+                        .adicionarComunicado(null)
+        );
+    }
+
+    private void executarTeste(
+            String descricao,
+            Runnable operacao) {
+
+        try {
+
+            operacao.run();
+
+            System.out.println(
+                    "[SUCESSO INESPERADO] "
+                            + descricao
+            );
+
+        } catch (
+                IdentificadorDuplicadoException
+                | RecursoNaoEncontradoException
+                | IllegalArgumentException e
+        ) {
+
+            System.out.println(
+                    "[ERRO ESPERADO] "
+                            + descricao
+                            + ": "
+                            + e.getMessage()
+            );
+        }
+    }
+
+    private void imprimirTitulo(
+            String titulo) {
+
+        System.out.println();
+        System.out.println(
+                "========================================"
+        );
+
+        System.out.println(titulo);
+
+        System.out.println(
+                "========================================"
+        );
+    }
+}

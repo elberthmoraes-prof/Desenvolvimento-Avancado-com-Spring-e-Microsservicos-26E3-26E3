@@ -1,0 +1,16 @@
+package br.edu.infnet.elberth_api.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+	//RecursoNaoEncontradoException
+	
+	@ExceptionHandler(RecursoNaoEncontradoException.class)
+	public ResponseEntity<Void> tratarRecursoNaoEncontrado(RecursoNaoEncontradoException exception){
+		return null;
+	}
+}

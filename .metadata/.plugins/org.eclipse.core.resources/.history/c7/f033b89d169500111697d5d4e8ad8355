@@ -1,0 +1,15 @@
+package br.edu.infnet.elberth_api.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.infnet.elberth_api.service.ComunicadoService;
+
+@RestController
+public class ComunicadoController {
+
+	private final ComunicadoService comunicadoService;
+	
+	public ComunicadoController(ComunicadoService comunicadoService) {
+		this.comunicadoService = comunicadoService;
+	}
+}

@@ -1,0 +1,41 @@
+2026-07-27 22:59:32.115: [INFO] OnDoneLoading sync enabled: 0
+2026-07-27 23:41:31.420: [INFO] OnDoneLoading sync enabled: 0
+2026-07-29 13:06:53.069: [INFO] OnDoneLoading sync enabled: 0
+2026-08-03 17:35:55.327: [INFO] OnDoneLoading sync enabled: 0
+2026-08-04 14:29:46.923: [INFO] OnDoneLoading sync enabled: 0
+2026-08-05 18:33:45.977: [INFO] OnDoneLoading sync enabled: 0
+2026-08-05 23:17:56.733: [INFO] OnDoneLoading sync enabled: 0
+2026-08-05 23:59:15.671: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:23:48.217: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:39:53.355: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:40:06.212: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:42:34.621: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:49:29.205: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:50:22.361: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:50:56.273: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:51:21.926: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 00:51:34.593: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 13:18:40.244: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 14:01:58.513: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 14:05:44.534: [INFO] OnDoneLoading sync enabled: 0
+2026-08-06 14:07:39.512: [INFO] OnDoneLoading sync enabled: 0
+2026-08-10 23:10:45.378: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-10 23:10:45.378: [INFO] Profiles total count: 1
+2026-08-10 23:10:45.382: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-04T00:10:40.956Z
+2026-08-10 23:10:45.382: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-10 23:10:45.382: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-04T00:10:40.956Z
+2026-08-10 23:10:45.382: [INFO] OnDoneLoading sync enabled: 0
+2026-08-10 23:10:45.382: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-10 23:10:45.382: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-10 23:10:45.382: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-12 23:07:05.773: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-12 23:10:09.847: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-12 23:10:09.847: [INFO] Profiles total count: 1
+2026-08-12 23:10:09.848: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-10T23:55:01.061Z
+2026-08-12 23:10:09.848: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-12 23:10:09.848: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-10T23:55:01.061Z
+2026-08-12 23:10:09.848: [INFO] OnDoneLoading sync enabled: 0
+2026-08-12 23:10:09.848: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-12 23:10:09.848: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-12 23:10:09.848: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-13 23:24:58.978: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

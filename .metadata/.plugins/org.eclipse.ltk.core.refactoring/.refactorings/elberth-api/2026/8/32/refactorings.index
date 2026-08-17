@@ -1,0 +1,16 @@
+1785800842136	Encapsulate field 'id, ...'
+1785801132386	Encapsulate field 'id, ...'
+1785803687941	Copy compilation unit
+1785803717552	Rename field 'comunicados'
+1785803729160	Rename field 'turmas'
+1785803737491	Rename local variable 'comunicado'
+1785803749679	Delete element
+1785803808227	Rename field 'comunicados'
+1785804126996	Copy compilation unit
+1785804160021	Rename type 'PessoaService'
+1785804180388	Copy compilation unit
+1785853087699	Copy compilation unit
+1785853175566	Copy compilation unit
+1785854141878	Rename package 'br.edu.infnet.elberth_api.model.service'
+1785854152581	Rename package 'br.edu.infnet.elberth_api.model.domain'
+1785854202759	Rename type 'Loader'

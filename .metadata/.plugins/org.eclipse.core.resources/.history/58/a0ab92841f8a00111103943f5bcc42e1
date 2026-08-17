@@ -1,0 +1,44 @@
+package br.edu.infnet.elberth_api;
+
+import java.time.LocalDateTime;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import br.edu.infnet.elberth_api.model.domain.Comunicado;
+import br.edu.infnet.elberth_api.model.domain.Escola;
+import br.edu.infnet.elberth_api.model.domain.Turma;
+
+@Component
+public class Loader implements CommandLineRunner {
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		Escola escola = new Escola("Pombinho Feliz", "São Gonçalo", false, 4.8);
+		
+		Turma turma = new Turma("901", 2026, true);
+
+		escola.adicionarTurma(turma);
+		
+		Comunicado comun001 = new Comunicado(
+				"Reunião de responsáveis", 
+				"A reunião será realizada na sexta.", 
+				true, 
+				LocalDateTime.now()
+			);
+		
+		Comunicado comun002 = new Comunicado(
+				"Trabalho de Java", 
+				"Entrega da primeira etapa na próxima semana.", 
+				false, 
+				null
+			);
+		
+		turma.adicionarComunicado(comun001);
+		turma.adicionarComunicado(comun002);
+
+		System.out.println(turma);
+		System.out.println(escola);		
+	}
+}

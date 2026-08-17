@@ -1,0 +1,24 @@
+package br.edu.infnet.elberth_api.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+	@ExceptionHandler(RecursoNaoEncontradoException.class)
+	public ResponseEntity<Void> tratarRecursoNaoEncontrado(RecursoNaoEncontradoException exception){
+		return ResponseEntity.notFound().build();
+	}
+	
+	@ExceptionHandler(IdentificadorDuplicadoException.class)
+	public ResponseEntity<Void> tratarIdentificadorDuplicado(IllegalArgumentException exception){
+		return ResponseEntity.badRequest().build();
+	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<Void> tratarArgumentoInvalido(IllegalArgumentException exception){
+		return ResponseEntity.badRequest().build();
+	}
+}

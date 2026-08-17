@@ -1,0 +1,31 @@
+package br.edu.infnet.elberth_api.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.edu.infnet.elberth_api.domain.Comunicado;
+import br.edu.infnet.elberth_api.service.ComunicadoService;
+
+@RestController
+@RequestMapping("/comunicados")
+public class ComunicadoController {
+
+	private final ComunicadoService comunicadoService;
+	
+	public ComunicadoController(ComunicadoService comunicadoService) {
+		this.comunicadoService = comunicadoService;
+	}
+
+	@GetMapping
+	public List<Comunicado> obterLista(){
+		return comunicadoService.obterLista();
+	}
+	
+	@GetMapping("/id")
+	public Comunicado obterPorId(Long id) {
+		return comunicadoService.obterPorId(id);
+	}	
+}
