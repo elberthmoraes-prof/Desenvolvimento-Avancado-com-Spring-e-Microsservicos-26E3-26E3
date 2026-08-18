@@ -4,18 +4,33 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+@Entity
+@Table(name = "comunicados")
 public class Comunicado implements Identificavel {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(nullable = false, length = 150)
 	private String titulo;
+	@Column(nullable = false, length = 2000)
 	private String conteudo;
 	private boolean publicado;
 	private LocalDateTime dataPublicacao;
 	
 	@JsonBackReference
+	@Transient
 	private Turma turma;
 	
-	public Comunicado() {
+	protected Comunicado() {
 	}
 
 	public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {

@@ -39,3 +39,32 @@
 2026-08-12 23:10:09.848: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-08-12 23:10:09.848: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-08-13 23:24:58.978: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-17 23:18:01.357: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-17 23:18:01.357: [INFO] Profiles total count: 1
+2026-08-17 23:18:01.358: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T00:15:16.559Z
+2026-08-17 23:18:01.358: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-17 23:18:01.358: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-13T00:15:16.559Z
+2026-08-17 23:18:01.358: [INFO] OnDoneLoading sync enabled: 0
+2026-08-17 23:18:01.358: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-17 23:18:01.358: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-17 23:18:01.358: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-18 00:19:02.184: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-18 00:34:25.920: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-18 00:34:25.920: [INFO] Profiles total count: 1
+2026-08-18 00:34:25.921: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-17T23:23:13.023Z
+2026-08-18 00:34:25.921: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-18 00:34:25.921: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-17T23:23:13.023Z
+2026-08-18 00:34:25.921: [INFO] OnDoneLoading sync enabled: 0
+2026-08-18 00:34:25.921: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-18 00:34:25.921: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-18 00:34:25.921: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-18 00:34:33.719: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-18 00:41:04.253: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-18 00:41:04.253: [INFO] Profiles total count: 1
+2026-08-18 00:41:04.254: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-17T23:23:13.023Z
+2026-08-18 00:41:04.254: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-18 00:41:04.254: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-17T23:23:13.023Z
+2026-08-18 00:41:04.254: [INFO] OnDoneLoading sync enabled: 0
+2026-08-18 00:41:04.254: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-18 00:41:04.254: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-18 00:41:04.254: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
