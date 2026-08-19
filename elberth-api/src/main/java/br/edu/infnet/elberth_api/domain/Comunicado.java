@@ -33,11 +33,13 @@ public class Comunicado implements Identificavel {
 	protected Comunicado() {
 	}
 
-	public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
-		super();
-		this.id = id;
+	public Comunicado(String titulo, String conteudo) {
 		this.titulo = titulo;
 		this.conteudo = conteudo;
+	}
+	public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
+		this(titulo, conteudo);
+		this.id = id;
 		this.publicado = publicado;
 		this.dataPublicacao = dataPublicacao;
 	}

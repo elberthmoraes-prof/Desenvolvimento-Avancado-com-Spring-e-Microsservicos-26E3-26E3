@@ -6,10 +6,22 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.elberth_api.domain.Comunicado;
+import br.edu.infnet.elberth_api.repository.ComunicadoRepository;
 
 @Service
 public class ComunicadoService extends BaseService<Comunicado> {
 
+    private final ComunicadoRepository comunicadoRepository;
+    
+    public ComunicadoService(ComunicadoRepository comunicadoRepository) {
+		this.comunicadoRepository = comunicadoRepository;
+	}
+	
+	
+	public List<Comunicado> obterLista() {
+		return comunicadoRepository.findAll();
+	}
+	
 	public List<Comunicado> obterPublicados() {
 
 		List<Comunicado> publicados = new ArrayList<>();

@@ -2,6 +2,7 @@ package br.edu.infnet.elberth_api;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import br.edu.infnet.elberth_api.domain.Responsavel;
 import br.edu.infnet.elberth_api.domain.Turma;
 import br.edu.infnet.elberth_api.exception.IdentificadorDuplicadoException;
 import br.edu.infnet.elberth_api.exception.RecursoNaoEncontradoException;
+import br.edu.infnet.elberth_api.repository.ComunicadoRepository;
 import br.edu.infnet.elberth_api.service.ComunicadoService;
 import br.edu.infnet.elberth_api.service.EscolaService;
 import br.edu.infnet.elberth_api.service.ProfessorService;
@@ -36,6 +38,7 @@ public class ProjetoRunner implements CommandLineRunner {
             new ResponsavelService();
 
     private final ComunicadoService comunicadoService;
+    private final ComunicadoRepository comunicadoRepository;
 
 
     private Escola escola;
@@ -49,12 +52,55 @@ public class ProjetoRunner implements CommandLineRunner {
     private Professor professor;
     private Responsavel responsavel;
 
-    public ProjetoRunner(ComunicadoService comunicadoService) {
+    public ProjetoRunner(ComunicadoService comunicadoService, ComunicadoRepository comunicadoRepository) {
     	this.comunicadoService = comunicadoService;
+    	this.comunicadoRepository = comunicadoRepository;
 	}
+    
+    private void demostrarRepository() {
+    	
+    	Comunicado comunicado = null;
+    	Comunicado comunicadoIncluido = null;
+    	
+    	comunicado = new Comunicado("Primeiro comunicado incluído", "Agora a gente tá usando Spring Data JPA");
+    	comunicadoIncluido = comunicadoRepository.save(comunicado);
+    	System.out.println("ID BANCO: [" + comunicadoIncluido.getId()+"]");
+
+    	comunicado = new Comunicado("Segundo comunicado incluído", "Agora a gente continua usando...");
+    	comunicadoIncluido = comunicadoRepository.save(comunicado);
+    	System.out.println("ID BANCO: [" + comunicadoIncluido.getId()+"]");
+
+    	comunicado = new Comunicado("Terceiro comunicado incluído", "Agora é para excluir..");
+    	comunicadoIncluido = comunicadoRepository.save(comunicado);
+    	System.out.println("ID BANCO: [" + comunicadoIncluido.getId()+"]");
+
+    	long quantidade = comunicadoRepository.count();
+    	System.out.printf("Quantidade de comunicados no banco: %d%n", quantidade);
+    	
+    	List<Comunicado> comunicados = null;
+    	comunicados = comunicadoRepository.findAll();
+    	comunicados.forEach(System.out::println);
+    	
+    	Optional<Comunicado> resultado = null;
+    	resultado = comunicadoRepository.findById(1L);
+    	resultado.ifPresent(comunicadoEncontrado -> System.out.println(comunicadoEncontrado));
+    	
+    	resultado = comunicadoRepository.findById(3L);
+    	resultado.ifPresent(System.out::println);
+    	
+    	boolean existe = comunicadoRepository.existsById(comunicado.getId());
+    	System.out.printf("O comunicado %d existe? %s%n", comunicado.getId(), existe ? "sim" : "não");
+    	
+    	comunicadoRepository.deleteById(comunicado.getId());
+
+    	comunicados = comunicadoRepository.findAll();
+    	comunicados.forEach(System.out::println);
+    }
     
     @Override
     public void run(String... args) {
+    	
+    	demostrarRepository();
 
         imprimirTitulo("INÍCIO DA APLICAÇÃO");
 
