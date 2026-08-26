@@ -1,8 +1,0 @@
-package br.edu.infnet.elberth_api.controller;
-
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class ComunicadoController {
-
-}

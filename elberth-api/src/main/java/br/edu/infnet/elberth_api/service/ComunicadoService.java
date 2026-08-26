@@ -1,103 +1,143 @@
 package br.edu.infnet.elberth_api.service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.elberth_api.domain.Comunicado;
+import br.edu.infnet.elberth_api.exception.RecursoNaoEncontradoException;
 import br.edu.infnet.elberth_api.repository.ComunicadoRepository;
 
 @Service
-public class ComunicadoService extends BaseService<Comunicado> {
+public class ComunicadoService {
 
     private final ComunicadoRepository comunicadoRepository;
-    
+
     public ComunicadoService(ComunicadoRepository comunicadoRepository) {
-		this.comunicadoRepository = comunicadoRepository;
+        this.comunicadoRepository = comunicadoRepository;
+    }
+
+    public List<Comunicado> obterLista() {
+        return comunicadoRepository.findAll();
+    }
+
+	public void incluir(Comunicado comunicado) {
+		
+		comunicadoRepository.save(comunicado);
 	}
 	
-	
-	public List<Comunicado> obterLista() {
-		return comunicadoRepository.findAll();
+	public void alterar(Long id, Comunicado comunicado) {
+		
+		Comunicado existente = obterPorId(id);
+		
+		existente.setConteudo(comunicado.getConteudo());
+		existente.setDataPublicacao(comunicado.getDataPublicacao());
+		existente.setPublicado(comunicado.isPublicado());
+		existente.setTitulo(comunicado.getTitulo());
+		
+		comunicadoRepository.save(existente);
 	}
 	
-	public List<Comunicado> obterPublicados() {
-
-		List<Comunicado> publicados = new ArrayList<>();
-
-		for (Comunicado comunicado : obterLista()) {
-
-			if (comunicado.isPublicado()) {
-				publicados.add(comunicado);
-			}
-		}
-
-		return publicados;
+	public void excluir(Long id) {
+		
+		Comunicado comunicado = obterPorId(id);
+		
+		comunicadoRepository.delete(comunicado);	
 	}
+
+    public Comunicado obterPorId(Long id) {
+
+    	return comunicadoRepository.findById(id).orElseThrow(
+    			() -> new RecursoNaoEncontradoException("Nenhum objeto encontrado para o identificador " + id + ".")
+    		);
+    }
 	
-	public List<Comunicado> obterPublicadosDeclarativo() {
+    public List<Comunicado> obterPublicados() {
 
-		return obterLista()
-				.stream()
-				.filter(Comunicado::isPublicado)
-				.toList();
-	}
+        List<Comunicado> publicados = new ArrayList<>();
 
-	public List<Comunicado> obterPorTitulo(String termo) {
+        for (Comunicado comunicado : obterLista()) {
 
-		validarTermo(termo);
+            if (comunicado.isPublicado()) {
+                publicados.add(comunicado);
+            }
+        }
 
-		String termoNormalizado = termo.toLowerCase();
+        return publicados;
+    }
 
-		List<Comunicado> resultado = new ArrayList<>();
+    public List<Comunicado> obterPublicadosDeclarativo() {
 
-		for (Comunicado comunicado : obterLista()) {
+        return obterLista()
+                .stream()
+                .filter(Comunicado::isPublicado)
+                .toList();
+    }
 
-			if (comunicado.getTitulo()
-					.toLowerCase()
-					.contains(termoNormalizado)) {
+    public List<Comunicado> obterPorTitulo(String termo) {
 
-				resultado.add(comunicado);
-			}
-		}
+        validarTermo(termo);
 
-		return resultado;
-	}
+        String termoNormalizado = termo.toLowerCase();
 
-	public List<Comunicado> buscarPorTituloDeclarativa(String termo) {
+        List<Comunicado> resultado = new ArrayList<>();
 
-		validarTermo(termo);
+        for (Comunicado comunicado : obterLista()) {
 
-		String termoNormalizado = termo.toLowerCase();
+            if (comunicado.getTitulo()
+                    .toLowerCase()
+                    .contains(termoNormalizado)) {
 
-		return obterLista()
-				.stream()
-				.filter(comunicado -> comunicado.getTitulo()
-						.toLowerCase()
-						.contains(termoNormalizado))
-				.toList();
-	}
-	
-	private void validarTermo(String termo) {
+                resultado.add(comunicado);
+            }
+        }
 
-        if (
-            termo == null
-            || termo.isBlank()
-        ) {
+        return resultado;
+    }
+
+    public List<Comunicado> buscarPorTituloDeclarativa(String termo) {
+
+        validarTermo(termo);
+
+        String termoNormalizado = termo.toLowerCase();
+
+        return obterLista()
+                .stream()
+                .filter(comunicado ->
+                        comunicado.getTitulo()
+                                .toLowerCase()
+                                .contains(termoNormalizado))
+                .toList();
+    }
+
+    public List<Comunicado> ordenarPorTitulo() {
+
+        return obterLista()
+                .stream()
+                .sorted(
+                        Comparator.comparing(
+                                Comunicado::getTitulo
+                        )
+                )
+                .toList();
+    }
+
+    public List<String> obterTitulos() {
+
+        return obterLista()
+                .stream()
+                .map(Comunicado::getTitulo)
+                .toList();
+    }
+
+    private void validarTermo(String termo) {
+
+        if (termo == null || termo.isBlank()) {
             throw new IllegalArgumentException(
-                "O termo de busca deve ser informado."
+                    "O termo de busca deve ser informado."
             );
         }
     }
-	
-	public List<Comunicado> ordenarPorTitulo() {
-		// TODO Auto-generated method stub
-		return new ArrayList<Comunicado>();
-	}
-
-	public List<String> obterTitulos() {
-		// TODO Auto-generated method stub
-		return new ArrayList<String>();
-	}
 }

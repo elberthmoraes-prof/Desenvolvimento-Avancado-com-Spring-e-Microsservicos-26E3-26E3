@@ -100,25 +100,25 @@ public class ProjetoRunner implements CommandLineRunner {
     @Override
     public void run(String... args) {
     	
-    	demostrarRepository();
-
-        imprimirTitulo("INÍCIO DA APLICAÇÃO");
-
-        criarObjetos();
-        demonstrarPolimorfismo();
-        criarRelacionamentos();
-        demonstrarRelacionamentos();
-        cadastrarObjetos();
-
-        demonstrarOperacoesBasicas();
-        demonstrarAlteracao();
-        demonstrarExclusao();
-        demonstrarConsultasImperativas();
-        demonstrarConsultasDeclarativas();
-        demonstrarProtecaoDasColecoes();
-        demonstrarExcecoes();
-
-        imprimirTitulo("FIM DA EXECUÇÃO");
+//    	demostrarRepository();
+//
+//        imprimirTitulo("INÍCIO DA APLICAÇÃO");
+//
+//        criarObjetos();
+//        demonstrarPolimorfismo();
+//        criarRelacionamentos();
+//        demonstrarRelacionamentos();
+//        cadastrarObjetos();
+//
+//        demonstrarOperacoesBasicas();
+//        demonstrarAlteracao();
+//        demonstrarExclusao();
+//        demonstrarConsultasImperativas();
+//        demonstrarConsultasDeclarativas();
+//        demonstrarProtecaoDasColecoes();
+//        demonstrarExcecoes();
+//
+//        imprimirTitulo("FIM DA EXECUÇÃO");
     }
 
     private void criarObjetos() {
@@ -408,7 +408,7 @@ public class ProjetoRunner implements CommandLineRunner {
                 )
         );
 
-        comunicadoService.alterar(
+        comunicadoService.alterar(1L,
                 comunicado2
         );
 
@@ -662,7 +662,7 @@ public class ProjetoRunner implements CommandLineRunner {
         executarTeste(
                 "Alteração de recurso inexistente",
                 () -> comunicadoService
-                        .alterar(inexistente)
+                        .alterar(0L, inexistente)
         );
     }
 

@@ -1,5 +1,0 @@
-package br.edu.infnet.elberth_api.exception;
-
-public class GlobalExceptionHandler {
-
-}

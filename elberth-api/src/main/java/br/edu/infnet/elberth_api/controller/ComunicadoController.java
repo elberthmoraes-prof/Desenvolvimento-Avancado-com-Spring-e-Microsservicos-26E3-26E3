@@ -67,7 +67,7 @@ public class ComunicadoController {
 		
 		comunicado.setId(id);
 
-		comunicadoService.alterar(comunicado);
+		comunicadoService.alterar(id, comunicado);
 		
 		return ResponseEntity.ok(comunicado);
 	}

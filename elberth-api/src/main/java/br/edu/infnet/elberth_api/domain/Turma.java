@@ -6,95 +6,119 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+@Entity
+@Table(name = "turmas")
 public class Turma implements Identificavel {
 
-	private Long id;
-	private String nome;
-	private int anoLetivo;
-	private boolean ativa;
-	
-	private Escola escola;
-	
-	@JsonManagedReference
-	private final List<Comunicado> comunicados = new ArrayList<Comunicado>();
-	
-	public Turma() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	}
+    private String nome;
 
-	public Turma(Long id, String nome, int anoLetivo, boolean ativa) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.anoLetivo = anoLetivo;
-		this.ativa = ativa;
-	}
+    private int anoLetivo;
 
-	public void adicionarComunicado(Comunicado comunicado){
-		
-		if(comunicado == null) {
-			throw new IllegalArgumentException("O comunicado não pode ser nulo.");
-		}
-		
-		comunicados.add(comunicado);
-		comunicado.setTurma(this);
-	}
+    private boolean ativa;
 
-	@Override
-	public String toString() {
+    @Transient
+    private Escola escola;
 
-		String nomeEscola = escola != null ? escola.getNome() : "Sem escola";
+    @Transient
+    @JsonManagedReference
+    private final List<Comunicado> comunicados =
+            new ArrayList<Comunicado>();
 
-		return String.format(
-				"Turma {ID=%d, nome='%s', anoLetivo=%d, ativa=%s, escola=%s, comunicados=%d}",
-				id,
-				nome,
-				anoLetivo,
-				ativa ? "sim" : "não",
-				nomeEscola,
-				comunicados.size());
-	}
+    public Turma() {
 
-	@Override
-	public Long getId() {
-		return id;
-	}	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Turma(Long id, String nome, int anoLetivo, boolean ativa) {
+        this.id = id;
+        this.nome = nome;
+        this.anoLetivo = anoLetivo;
+        this.ativa = ativa;
+    }
 
-	public int getAnoLetivo() {
-		return anoLetivo;
-	}
+    public void adicionarComunicado(Comunicado comunicado) {
 
-	public void setAnoLetivo(int anoLetivo) {
-		this.anoLetivo = anoLetivo;
-	}
+        if (comunicado == null) {
+            throw new IllegalArgumentException(
+                    "O comunicado não pode ser nulo."
+            );
+        }
 
-	public boolean isAtiva() {
-		return ativa;
-	}
+        comunicados.add(comunicado);
+        comunicado.setTurma(this);
+    }
 
-	public void setAtiva(boolean ativa) {
-		this.ativa = ativa;
-	}
+    @Override
+    public String toString() {
 
-	public Escola getEscola() {
-		return escola;
-	}
+        String nomeEscola =
+                escola != null
+                        ? escola.getNome()
+                        : "Sem escola";
 
-	public void setEscola(Escola escola) {
-		this.escola = escola;
-	}
+        return String.format(
+                "Turma {ID=%d, nome='%s', anoLetivo=%d, ativa=%s, escola=%s, comunicados=%d}",
+                id,
+                nome,
+                anoLetivo,
+                ativa ? "sim" : "não",
+                nomeEscola,
+                comunicados.size()
+        );
+    }
 
-	public List<Comunicado> getComunicados() {
-		return Collections.unmodifiableList(comunicados);
-	}
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getAnoLetivo() {
+        return anoLetivo;
+    }
+
+    public void setAnoLetivo(int anoLetivo) {
+        this.anoLetivo = anoLetivo;
+    }
+
+    public boolean isAtiva() {
+        return ativa;
+    }
+
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
+    }
+
+    public Escola getEscola() {
+        return escola;
+    }
+
+    public void setEscola(Escola escola) {
+        this.escola = escola;
+    }
+
+    public List<Comunicado> getComunicados() {
+        return Collections.unmodifiableList(comunicados);
+    }
 }
