@@ -20,10 +20,7 @@ public class ProjetoRunner implements CommandLineRunner {
     private final TurmaRepository turmaRepository;
     private final ComunicadoRepository comunicadoRepository;
 
-    public ProjetoRunner(
-            TurmaRepository turmaRepository,
-            ComunicadoRepository comunicadoRepository) {
-
+    public ProjetoRunner(TurmaRepository turmaRepository, ComunicadoRepository comunicadoRepository) {
         this.turmaRepository = turmaRepository;
         this.comunicadoRepository = comunicadoRepository;
     }
@@ -41,113 +38,40 @@ public class ProjetoRunner implements CommandLineRunner {
     private void carregarDadosIniciais() {
 
         System.out.println();
-        System.out.println(
-                "========================================"
-        );
-        System.out.println(
-                "CARREGANDO DADOS INICIAIS"
-        );
-        System.out.println(
-                "========================================"
-        );
+        System.out.println("========================================");
+        System.out.println("CARREGANDO DADOS INICIAIS");
+        System.out.println("========================================");
 
-        Turma turmaJava =
-                criarTurma(
-                        "Turma Java",
-                        2026,
-                        true
-                );
+        Turma turmaJava = criarTurma("Turma Java", 2026, true);
 
-        Turma turmaSpring =
-                criarTurma(
-                        "Turma Spring Boot",
-                        2026,
-                        true
-                );
+        Turma turmaSpring = criarTurma("Turma Spring Boot", 2026, true);
 
-        criarComunicado(
-                turmaJava,
-                "Aula de JPA",
-                "Relacionamentos com Spring Data JPA.",
-                true,
-                LocalDateTime.now()
-        );
+        criarComunicado(turmaJava, "Aula de JPA", "Relacionamentos com Spring Data JPA.", true, LocalDateTime.now());
 
-        criarComunicado(
-                turmaJava,
-                "Trabalho de Java",
-                "Entrega do trabalho na próxima semana.",
-                false,
-                null
-        );
+        criarComunicado(turmaJava, "Trabalho de Java", "Entrega do trabalho na próxima semana.", false, null);
 
-        criarComunicado(
-                turmaSpring,
-                "API REST",
-                "Revisão dos endpoints da aplicação.",
-                true,
-                LocalDateTime.now()
-        );
+        criarComunicado(turmaSpring, "API REST", "Revisão dos endpoints da aplicação.", true, LocalDateTime.now());
 
         System.out.println();
-        System.out.println(
-                "Turmas cadastradas: "
-                        + turmaRepository.count()
-        );
-
-        System.out.println(
-                "Comunicados cadastrados: "
-                        + comunicadoRepository.count()
-        );
-
-        System.out.println(
-                "Dados iniciais carregados com sucesso."
-        );
-
-        System.out.println(
-                "========================================"
-        );
+        System.out.println("Turmas cadastradas: " + turmaRepository.count());
+        System.out.println("Comunicados cadastrados: " + comunicadoRepository.count());
+        System.out.println("Dados iniciais carregados com sucesso.");
+        System.out.println("========================================");
     }
 
-    private Turma criarTurma(
-            String nome,
-            int anoLetivo,
-            boolean ativa) {
+    private Turma criarTurma(String nome, int anoLetivo, boolean ativa) { 
 
-        Turma turma =
-                new Turma(
-                        null,
-                        nome,
-                        anoLetivo,
-                        ativa
-                );
+        Turma turma = new Turma(null, nome, anoLetivo, ativa);
 
-        return turmaRepository.save(
-                turma
-        );
+        return turmaRepository.save(turma);
     }
 
-    private Comunicado criarComunicado(
-            Turma turma,
-            String titulo,
-            String conteudo,
-            boolean publicado,
-            LocalDateTime dataPublicacao) {
+    private Comunicado criarComunicado(Turma turma, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
 
-        Comunicado comunicado =
-                new Comunicado(
-                        titulo,
-                        conteudo,
-                        publicado,
-                        dataPublicacao
-                );
+        Comunicado comunicado = new Comunicado(titulo, conteudo, publicado, dataPublicacao);
 
-        turma.adicionarComunicado(
-                comunicado
-        );
+        turma.adicionarComunicado(comunicado);
 
-        return comunicadoRepository.save(
-                comunicado
-        );
+        return comunicadoRepository.save(comunicado);
     }
 }

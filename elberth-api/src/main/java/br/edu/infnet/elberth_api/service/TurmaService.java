@@ -16,9 +16,7 @@ public class TurmaService {
     private final TurmaRepository turmaRepository;
     private final ComunicadoRepository comunicadoRepository;
 
-    public TurmaService(
-            TurmaRepository turmaRepository,
-            ComunicadoRepository comunicadoRepository) {
+    public TurmaService(TurmaRepository turmaRepository, ComunicadoRepository comunicadoRepository) {
 
         this.turmaRepository = turmaRepository;
         this.comunicadoRepository = comunicadoRepository;
@@ -30,20 +28,12 @@ public class TurmaService {
 
     public Turma obterPorId(Long id) {
 
-        return turmaRepository
-                .findById(id)
-                .orElseThrow(
-                        () -> new RecursoNaoEncontradoException(
-                                "Turma não encontrada: " + id
-                        )
-                );
+        return turmaRepository.findById(id).orElseThrow(() -> new RecursoNaoEncontradoException("Turma não encontrada: " + id));
     }
 
-    public List<Turma> obterPorAnoLetivo(
-            int anoLetivo) {
+    public List<Turma> obterPorAnoLetivo(int anoLetivo) {
 
-        return turmaRepository
-                .findByAnoLetivo(anoLetivo);
+        return turmaRepository.findByAnoLetivo(anoLetivo);
     }
 
     public Turma incluir(Turma turma) {
@@ -53,55 +43,34 @@ public class TurmaService {
         return turmaRepository.save(turma);
     }
 
-    public Turma alterar(
-            Long id,
-            Turma turma) {
+    public Turma alterar(Long id, Turma turma) {
 
-        Turma turmaAtual =
-                obterPorId(id);
+        Turma turmaAtual = obterPorId(id);
 
-        turmaAtual.setNome(
-                turma.getNome()
-        );
+        turmaAtual.setNome(turma.getNome());
 
-        turmaAtual.setAnoLetivo(
-                turma.getAnoLetivo()
-        );
+        turmaAtual.setAnoLetivo(turma.getAnoLetivo());
 
-        turmaAtual.setAtiva(
-                turma.isAtiva()
-        );
+        turmaAtual.setAtiva(turma.isAtiva());
 
-        return turmaRepository.save(
-                turmaAtual
-        );
+        return turmaRepository.save(turmaAtual);
     }
 
     public void excluir(Long id) {
 
-        Turma turma =
-                obterPorId(id);
+        Turma turma = obterPorId(id);
 
-        turmaRepository.delete(
-                turma
-        );
+        turmaRepository.delete(turma);
     }
 
-    public Comunicado adicionarComunicado(
-            Long turmaId,
-            Comunicado comunicado) {
+    public Comunicado adicionarComunicado(Long turmaId, Comunicado comunicado) {
 
-        Turma turma =
-                obterPorId(turmaId);
+        Turma turma = obterPorId(turmaId);
 
         comunicado.setId(null);
 
-        turma.adicionarComunicado(
-                comunicado
-        );
+        turma.adicionarComunicado(comunicado);
 
-        return comunicadoRepository.save(
-                comunicado
-        );
+        return comunicadoRepository.save(comunicado);
     }
 }

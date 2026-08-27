@@ -19,8 +19,7 @@ public abstract class BaseService<T extends Identificavel> {
         validarObjeto(objeto);
 
         if (dados.containsKey(objeto.getId())) {
-            throw new IdentificadorDuplicadoException("Já existe um objeto com o identificador " + objeto.getId() + "."
-            );
+            throw new IdentificadorDuplicadoException("Já existe um objeto com o identificador " + objeto.getId() + ".");
         }
 
         dados.put(objeto.getId(), objeto);
@@ -56,26 +55,22 @@ public abstract class BaseService<T extends Identificavel> {
     private void validarObjeto(T objeto) {
 
         if (objeto == null) {
-            throw new IllegalArgumentException("O objeto não pode ser nulo."
-            );
+            throw new IllegalArgumentException("O objeto não pode ser nulo.");
         }
 
         if (objeto.getId() == null) {
-            throw new IllegalArgumentException("O identificador não pode ser nulo."
-            );
+            throw new IllegalArgumentException("O identificador não pode ser nulo.");
         }
     }
 
     private void verificarExistencia(Long id) {
 
         if (id == null) {
-            throw new IllegalArgumentException("O identificador não pode ser nulo."
-            );
+            throw new IllegalArgumentException("O identificador não pode ser nulo.");
         }
 
         if (!dados.containsKey(id)) {
-            throw new RecursoNaoEncontradoException("Nenhum objeto encontrado para o identificador " + id + "."
-            );
+            throw new RecursoNaoEncontradoException("Nenhum objeto encontrado para o identificador " + id + ".");
         }
     }
 }

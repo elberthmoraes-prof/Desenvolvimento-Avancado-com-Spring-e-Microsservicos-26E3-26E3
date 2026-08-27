@@ -27,8 +27,7 @@ public class TurmaController {
 
     private final TurmaService turmaService;
 
-    public TurmaController(
-            TurmaService turmaService) {
+    public TurmaController(TurmaService turmaService) {
 
         this.turmaService = turmaService;
     }
@@ -40,83 +39,56 @@ public class TurmaController {
     @GetMapping
     public ResponseEntity<List<Turma>> obterLista() {
 
-        List<Turma> turmas =
-                turmaService.obterLista();
+        List<Turma> turmas = turmaService.obterLista();
 
         return ResponseEntity.ok(turmas);
     }
 
     @GetMapping(params = "anoLetivo")
-    public ResponseEntity<List<Turma>> obterPorAnoLetivo(
-            @RequestParam int anoLetivo) {
+    public ResponseEntity<List<Turma>> obterPorAnoLetivo(@RequestParam int anoLetivo) {
 
-        List<Turma> turmas =
-                turmaService
-                        .obterPorAnoLetivo(anoLetivo);
+        List<Turma> turmas = turmaService.obterPorAnoLetivo(anoLetivo);
 
         return ResponseEntity.ok(turmas);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Turma> obterPorId(
-            @PathVariable Long id) {
+    public ResponseEntity<Turma> obterPorId(@PathVariable Long id) {
 
-        Turma turma =
-                turmaService.obterPorId(id);
+        Turma turma = turmaService.obterPorId(id);
 
-        return ResponseEntity.ok(
-                turma
-        );
+        return ResponseEntity.ok(turma);
     }
 
     @PostMapping
-    public ResponseEntity<Turma> incluir(@Valid
-            @RequestBody Turma turma) {
+    public ResponseEntity<Turma> incluir(@Valid @RequestBody Turma turma) {
 
-        Turma turmaIncluida =
-                turmaService.incluir(
-                        turma
-                );
+        Turma turmaIncluida = turmaService.incluir(turma);
 
         URI location =
                 ServletUriComponentsBuilder
                         .fromCurrentRequest()
                         .path("/{id}")
-                        .buildAndExpand(
-                                turmaIncluida.getId()
-                        )
+                        .buildAndExpand(turmaIncluida.getId())
                         .toUri();
 
-        return ResponseEntity
-                .created(location)
-                .body(turmaIncluida);
+        return ResponseEntity.created(location).body(turmaIncluida);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Turma> alterar(
-            @PathVariable Long id,
-            @Valid @RequestBody Turma turma) {
+    public ResponseEntity<Turma> alterar(@PathVariable Long id, @Valid @RequestBody Turma turma) {
 
-        Turma turmaAlterada =
-                turmaService.alterar(
-                        id,
-                        turma
-                );
+        Turma turmaAlterada = turmaService.alterar(id, turma);
 
-        return ResponseEntity.ok(
-                turmaAlterada
-        );
+        return ResponseEntity.ok(turmaAlterada);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(
-            @PathVariable Long id) {
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
 
         turmaService.excluir(id);
 
-        return ResponseEntity
-                .noContent()
-                .build();
+        return ResponseEntity.noContent().build();
     }
 
     @Operation(
@@ -124,29 +96,17 @@ public class TurmaController {
             description = "Cria um comunicado associado à turma informada."
     )
     @PostMapping("/{turmaId}/comunicados")
-    public ResponseEntity<Comunicado> adicionarComunicado(
-            @PathVariable Long turmaId,
-            @RequestBody Comunicado comunicado) {
+    public ResponseEntity<Comunicado> adicionarComunicado(@PathVariable Long turmaId, @RequestBody Comunicado comunicado) {
 
-        Comunicado comunicadoIncluido =
-                turmaService.adicionarComunicado(
-                        turmaId,
-                        comunicado
-                );
+        Comunicado comunicadoIncluido = turmaService.adicionarComunicado(turmaId, comunicado);
 
         URI location =
                 ServletUriComponentsBuilder
                         .fromCurrentContextPath()
                         .path("/comunicados/{id}")
-                        .buildAndExpand(
-                                comunicadoIncluido.getId()
-                        )
+                        .buildAndExpand(comunicadoIncluido.getId())
                         .toUri();
 
-        return ResponseEntity
-                .created(location)
-                .body(comunicadoIncluido);
+        return ResponseEntity.created(location).body(comunicadoIncluido);
     }
-    
-    
 }

@@ -15,8 +15,7 @@ public class ComunicadoService {
 
     private final ComunicadoRepository comunicadoRepository;
 
-    public ComunicadoService(
-            ComunicadoRepository comunicadoRepository) {
+    public ComunicadoService(ComunicadoRepository comunicadoRepository) {
 
         this.comunicadoRepository = comunicadoRepository;
     }
@@ -32,11 +31,7 @@ public class ComunicadoService {
 
         return comunicadoRepository
                 .findById(id)
-                .orElseThrow(
-                        () -> new RecursoNaoEncontradoException(
-                                "Comunicado não encontrado: " + id
-                        )
-                );
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Comunicado não encontrado: " + id));
     }
 
     public List<Comunicado> obterLista() {
@@ -44,48 +39,31 @@ public class ComunicadoService {
         return comunicadoRepository.findAll();
     }
 
-    public Comunicado alterar(
-            Long id,
-            Comunicado comunicado) {
+    public Comunicado alterar(Long id, Comunicado comunicado) {
 
-        Comunicado comunicadoAtual =
-                obterPorId(id);
+        Comunicado comunicadoAtual = obterPorId(id);
 
-        comunicadoAtual.setTitulo(
-                comunicado.getTitulo()
-        );
+        comunicadoAtual.setTitulo(comunicado.getTitulo());
 
-        comunicadoAtual.setConteudo(
-                comunicado.getConteudo()
-        );
+        comunicadoAtual.setConteudo(comunicado.getConteudo());
 
-        comunicadoAtual.setPublicado(
-                comunicado.isPublicado()
-        );
+        comunicadoAtual.setPublicado(comunicado.isPublicado());
 
-        comunicadoAtual.setDataPublicacao(
-                comunicado.getDataPublicacao()
-        );
+        comunicadoAtual.setDataPublicacao(comunicado.getDataPublicacao());
 
-        return comunicadoRepository.save(
-                comunicadoAtual
-        );
+        return comunicadoRepository.save(comunicadoAtual);
     }
 
     public void excluir(Long id) {
 
-        Comunicado comunicado =
-                obterPorId(id);
+        Comunicado comunicado = obterPorId(id);
 
-        comunicadoRepository.delete(
-                comunicado
-        );
+        comunicadoRepository.delete(comunicado);
     }
 
     public List<Comunicado> obterPublicados() {
 
-        List<Comunicado> publicados =
-                new ArrayList<>();
+        List<Comunicado> publicados = new ArrayList<>();
 
         for (Comunicado comunicado : obterLista()) {
 
@@ -107,26 +85,20 @@ public class ComunicadoService {
 
     public List<Comunicado> obterPublicadosDoBanco() {
 
-        return comunicadoRepository
-                .findByPublicadoTrue();
+        return comunicadoRepository.findByPublicadoTrue();
     }
 
-    public List<Comunicado> obterPorTitulo(
-            String termo) {
+    public List<Comunicado> obterPorTitulo(String termo) {
 
         validarTermo(termo);
 
-        String termoNormalizado =
-                termo.toLowerCase();
+        String termoNormalizado = termo.toLowerCase();
 
-        List<Comunicado> resultado =
-                new ArrayList<>();
+        List<Comunicado> resultado = new ArrayList<>();
 
         for (Comunicado comunicado : obterLista()) {
 
-            if (comunicado.getTitulo()
-                    .toLowerCase()
-                    .contains(termoNormalizado)) {
+            if (comunicado.getTitulo().toLowerCase().contains(termoNormalizado)) {
 
                 resultado.add(comunicado);
             }
@@ -135,61 +107,40 @@ public class ComunicadoService {
         return resultado;
     }
 
-    public List<Comunicado> buscarPorTituloDeclarativa(
-            String termo) {
+    public List<Comunicado> buscarPorTituloDeclarativa(String termo) {
 
         validarTermo(termo);
 
-        String termoNormalizado =
-                termo.toLowerCase();
+        String termoNormalizado = termo.toLowerCase();
 
         return obterLista()
                 .stream()
-                .filter(comunicado ->
-                        comunicado.getTitulo()
-                                .toLowerCase()
-                                .contains(termoNormalizado))
+                .filter(comunicado -> comunicado.getTitulo().toLowerCase().contains(termoNormalizado))
                 .toList();
     }
 
-    public List<Comunicado> buscarPorTitulo(
-            String termo) {
+    public List<Comunicado> buscarPorTitulo(String termo) {
 
         validarTermo(termo);
 
-        return comunicadoRepository
-                .findByTituloContainingIgnoreCase(
-                        termo
-                );
+        return comunicadoRepository.findByTituloContainingIgnoreCase(termo);
     }
 
     public List<Comunicado> ordenarPorTitulo() {
 
-        return obterLista()
-                .stream()
-                .sorted(
-                        Comparator.comparing(
-                                Comunicado::getTitulo
-                        )
-                )
-                .toList();
+        return obterLista().stream().sorted(Comparator.comparing(Comunicado::getTitulo)).toList();
     }
 
     public List<String> obterTitulos() {
 
-        return obterLista()
-                .stream()
-                .map(Comunicado::getTitulo)
-                .toList();
+        return obterLista().stream().map(Comunicado::getTitulo).toList();
     }
 
     private void validarTermo(String termo) {
 
         if (termo == null || termo.isBlank()) {
 
-            throw new IllegalArgumentException(
-                    "O termo de busca deve ser informado."
-            );
+            throw new IllegalArgumentException("O termo de busca deve ser informado.");
         }
     }
 }

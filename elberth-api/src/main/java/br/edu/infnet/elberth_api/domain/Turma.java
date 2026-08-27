@@ -25,19 +25,11 @@ public class Turma implements Identificavel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(
-            message = "O nome da turma deve ser informado."
-    )
-    @Size(
-            max = 100,
-            message = "O nome da turma deve possuir no máximo 100 caracteres."
-    )
+    @NotBlank(message = "O nome da turma deve ser informado.")
+    @Size(max = 100, message = "O nome da turma deve possuir no máximo 100 caracteres.")
     private String nome;
 
-    @Min(
-            value = 2000,
-            message = "O ano letivo deve ser igual ou superior a 2000."
-    )
+    @Min(value = 2000, message = "O ano letivo deve ser igual ou superior a 2000.")
     private int anoLetivo;
 
     private boolean ativa;
@@ -47,8 +39,7 @@ public class Turma implements Identificavel {
 
     @OneToMany(mappedBy = "turma")
     @JsonManagedReference
-    private List<Comunicado> comunicados =
-            new ArrayList<Comunicado>();
+    private List<Comunicado> comunicados = new ArrayList<Comunicado>();
 
     public Turma() {
 
@@ -70,9 +61,7 @@ public class Turma implements Identificavel {
             Comunicado comunicado) {
 
         if (comunicado == null) {
-            throw new IllegalArgumentException(
-                    "O comunicado não pode ser nulo."
-            );
+            throw new IllegalArgumentException("O comunicado não pode ser nulo.");
         }
 
         comunicados.add(comunicado);
@@ -82,13 +71,9 @@ public class Turma implements Identificavel {
     @Override
     public String toString() {
 
-        String nomeEscola =
-                escola != null
-                        ? escola.getNome()
-                        : "Sem escola";
+        String nomeEscola = escola != null ? escola.getNome() : "Sem escola";
 
-        return String.format(
-                "Turma {ID=%d, nome='%s', anoLetivo=%d, ativa=%s, escola=%s, comunicados=%d}",
+        return String.format("Turma {ID=%d, nome='%s', anoLetivo=%d, ativa=%s, escola=%s, comunicados=%d}",
                 id,
                 nome,
                 anoLetivo,
