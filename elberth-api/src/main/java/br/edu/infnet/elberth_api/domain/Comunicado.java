@@ -9,8 +9,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "comunicados")
@@ -19,15 +22,23 @@ public class Comunicado implements Identificavel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	@Column(nullable = false, length = 150)
+	@NotBlank(message = "O título deve ser informado.")
+	@Size(max = 150, message = "O título deve possuir no máximo 150 caracteres.")
 	private String titulo;
+	
 	@Column(nullable = false, length = 2000)
+	@NotBlank(message = "O conteúdo deve ser informado.")
+	@Size(max = 2000, message = "O conteúdo deve possuir no máximo 2000 caracteres.")
 	private String conteudo;
+	
 	private boolean publicado;
 	private LocalDateTime dataPublicacao;
 	
+	@ManyToOne
+	@JoinColumn(name = "turma_id")
 	@JsonBackReference
-	@Transient
 	private Turma turma;
 	
 	protected Comunicado() {
@@ -37,11 +48,14 @@ public class Comunicado implements Identificavel {
 		this.titulo = titulo;
 		this.conteudo = conteudo;
 	}
-	public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
+	public Comunicado(String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
 		this(titulo, conteudo);
-		this.id = id;
 		this.publicado = publicado;
 		this.dataPublicacao = dataPublicacao;
+	}
+	public Comunicado(Long id, String titulo, String conteudo, boolean publicado, LocalDateTime dataPublicacao) {
+		this(titulo, conteudo, publicado, dataPublicacao);
+		this.id = id;
 	}
 
 	@Override

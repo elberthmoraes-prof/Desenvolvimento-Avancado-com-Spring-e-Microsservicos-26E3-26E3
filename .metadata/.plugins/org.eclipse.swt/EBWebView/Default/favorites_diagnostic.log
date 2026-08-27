@@ -118,3 +118,133 @@
 2026-08-26 00:43:10.348: [INFO] BookmarkModelLoaded, ids_reassigned: 0
 2026-08-26 00:43:10.348: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-08-26 00:43:10.348: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 18:31:47.058: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:06:08.641: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:06:08.641: [INFO] Profiles total count: 1
+2026-08-26 23:06:08.644: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:06:08.644: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:06:08.644: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:06:08.645: [INFO] OnDoneLoading sync enabled: 0
+2026-08-26 23:06:08.645: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-26 23:06:08.645: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-26 23:06:08.645: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:29:21.958: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:31:56.751: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:31:56.751: [INFO] Profiles total count: 1
+2026-08-26 23:31:56.753: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:31:56.753: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:31:56.754: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:31:56.754: [INFO] OnDoneLoading sync enabled: 0
+2026-08-26 23:31:56.754: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-26 23:31:56.754: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-26 23:31:56.754: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:31:57.295: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:32:55.255: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:32:55.255: [INFO] Profiles total count: 1
+2026-08-26 23:32:55.255: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:32:55.255: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:32:55.256: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:32:55.256: [INFO] OnDoneLoading sync enabled: 0
+2026-08-26 23:32:55.256: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-26 23:32:55.256: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-26 23:32:55.256: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:33:02.777: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:33:53.623: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:33:53.623: [INFO] Profiles total count: 1
+2026-08-26 23:33:53.623: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:33:53.623: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-26 23:33:53.623: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-26 23:33:53.624: [INFO] OnDoneLoading sync enabled: 0
+2026-08-26 23:33:53.624: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-26 23:33:53.624: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-26 23:33:53.624: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-26 23:56:33.458: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:15.828: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:15.828: [INFO] Profiles total count: 1
+2026-08-27 00:00:15.829: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:15.829: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:15.829: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:15.829: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:00:15.829: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:00:15.829: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:00:15.829: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:20.755: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:38.685: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:38.685: [INFO] Profiles total count: 1
+2026-08-27 00:00:38.686: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:38.686: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:38.687: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:38.687: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:00:38.687: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:00:38.687: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:00:38.687: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:38.997: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:43.551: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:43.551: [INFO] Profiles total count: 1
+2026-08-27 00:00:43.552: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:43.552: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:43.553: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:43.553: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:00:43.553: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:00:43.553: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:00:43.553: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:43.995: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:46.266: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:46.266: [INFO] Profiles total count: 1
+2026-08-27 00:00:46.267: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:46.267: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:46.267: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:46.267: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:00:46.267: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:00:46.267: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:00:46.267: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:46.697: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:00:52.608: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:52.608: [INFO] Profiles total count: 1
+2026-08-27 00:00:52.609: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:52.609: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:00:52.609: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:00:52.609: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:00:52.609: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:00:52.610: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:00:52.610: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:33:00.293: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:37:34.502: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:37:34.502: [INFO] Profiles total count: 1
+2026-08-27 00:37:34.503: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:37:34.503: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:37:34.503: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:37:34.503: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:37:34.503: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:37:34.503: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:37:34.503: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:37:48.108: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 00:48:56.835: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:48:56.835: [INFO] Profiles total count: 1
+2026-08-27 00:48:56.835: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:48:56.835: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 00:48:56.835: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 00:48:56.835: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 00:48:56.835: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 00:48:56.835: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 00:48:56.835: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 10:58:03.403: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 11:24:10.566: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 11:24:10.566: [INFO] Profiles total count: 1
+2026-08-27 11:24:10.566: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 11:24:10.566: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 11:24:10.566: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 11:24:10.566: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 11:24:10.566: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 11:24:10.566: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 11:24:10.567: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 11:37:35.687: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-08-27 11:38:06.561: [INFO] CurrentProfilePath: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 11:38:06.561: [INFO] Profiles total count: 1
+2026-08-27 11:38:06.561: [INFO] Profile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 11:38:06.562: [INFO] LastUsedProfileDir: C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-08-27 11:38:06.562: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Desenvolvimento Avançado com Spring e Microsserviços [26E3-26E3]\workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-08-19T00:18:17.590Z
+2026-08-27 11:38:06.562: [INFO] OnDoneLoading sync enabled: 0
+2026-08-27 11:38:06.562: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-08-27 11:38:06.562: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-08-27 11:38:06.562: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
