@@ -1,7 +1,6 @@
 package br.edu.infnet.arquitetura.aluno;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -15,27 +14,39 @@ public class AlunoService {
 	}
 
 	public Aluno incluir(Aluno aluno) {
-		return alunoRepository.save(aluno);
-	}
 
+	    if (alunoRepository.findByEmail(aluno.getEmail()).isPresent()) {
+	        throw new IllegalArgumentException("Já existe um aluno com o e-mail informado.");
+	    }
+
+	    return alunoRepository.save(aluno);
+	}
+	
 	public List<Aluno> obterLista(){
 		return alunoRepository.findAll();
 	}
 
 	public Aluno obterPorId(Long id) {
-		return alunoRepository.findById(id).orElseThrow(() -> new AlunoNaoEncontratoException(id));
+		return alunoRepository.findById(id).orElseThrow(() -> new AlunoNaoEncontradoException(id));
 	}
 
 	public Aluno alterar(Long id, Aluno aluno) {
-		
-		Aluno existente = obterPorId(id);
-		
-		existente.setNome(aluno.getNome());
-		existente.setEmail(aluno.getEmail());
-		existente.setDataNascimento(aluno.getDataNascimento());
-		existente.setAtivo(aluno.isAtivo());
-		
-		return alunoRepository.save(existente);
+
+	    Aluno existente = obterPorId(id);
+
+	    alunoRepository.findByEmail(aluno.getEmail())
+	        .filter(outroAluno -> !outroAluno.getId().equals(id))
+	        .ifPresent(outroAluno -> {throw new IllegalArgumentException(
+	                "Já existe outro aluno com o e-mail informado."
+	            );
+	        });
+
+	    existente.setNome(aluno.getNome());
+	    existente.setEmail(aluno.getEmail());
+	    existente.setDataNascimento(aluno.getDataNascimento());
+	    existente.setAtivo(aluno.isAtivo());
+
+	    return alunoRepository.save(existente);
 	}
 
 	public void excluir(Long id) {
@@ -53,7 +64,7 @@ public class AlunoService {
 		return alunoRepository.findByNomeContainingIgnoreCase(nome);
 	}
 
-	public Optional<Aluno> obterPorEmail(String email) {
-		return alunoRepository.findByEmail(email);
+	public Aluno obterPorEmail(String email) {
+	    return alunoRepository.findByEmail(email).orElseThrow(() -> new AlunoEmailNaoEncontradoException(email));
 	}
 }

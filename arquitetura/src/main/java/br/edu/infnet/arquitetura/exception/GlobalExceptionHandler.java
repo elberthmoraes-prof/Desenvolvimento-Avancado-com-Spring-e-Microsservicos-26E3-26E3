@@ -9,7 +9,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import br.edu.infnet.arquitetura.aluno.AlunoNaoEncontratoException;
+import br.edu.infnet.arquitetura.aluno.AlunoEmailNaoEncontradoException;
+import br.edu.infnet.arquitetura.aluno.AlunoNaoEncontradoException;
+import br.edu.infnet.arquitetura.turma.TurmaNaoEncontradaException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -39,12 +41,24 @@ public class GlobalExceptionHandler {
 		return criarResposta(HttpStatus.BAD_REQUEST, mensagem);
 	}
 	
-	@ExceptionHandler(AlunoNaoEncontratoException.class)
-	public ResponseEntity<ErroResponse> tratarAlunoNaoEncontrado(AlunoNaoEncontratoException exception){
+	@ExceptionHandler(AlunoNaoEncontradoException.class)
+	public ResponseEntity<ErroResponse> tratarAlunoNaoEncontrado(AlunoNaoEncontradoException exception){
 
 		return criarResposta(HttpStatus.NOT_FOUND, exception.getMessage());
 	}
 
+	@ExceptionHandler(TurmaNaoEncontradaException.class)
+	public ResponseEntity<ErroResponse> tratarTurmaNaoEncontrada(TurmaNaoEncontradaException exception) {
+
+	    return criarResposta(HttpStatus.NOT_FOUND, exception.getMessage());
+	}
+	
+	@ExceptionHandler(AlunoEmailNaoEncontradoException.class)
+	public ResponseEntity<ErroResponse> tratarAlunoEmailNaoEncontrado(AlunoEmailNaoEncontradoException exception) {
+
+	    return criarResposta(HttpStatus.NOT_FOUND, exception.getMessage());
+	}	
+	
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ResponseEntity<ErroResponse> tratarArgumentoInvalido(IllegalArgumentException exception){
 
